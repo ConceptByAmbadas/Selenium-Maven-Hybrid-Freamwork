@@ -13,6 +13,8 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -34,11 +36,14 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class TestBase {
+
+	public static final Logger log = Logger.getLogger(TestBase.class.getName());
 	public static Properties prop;
 	public static String dest;
 	public static String time;
-	static ExtentReports report;
-	ExtentTest test;
+
+	public ExtentReports report;
+	public ExtentTest test;
 	File src;
 	FileInputStream fis;
 	Excel_Reader reader;
@@ -49,12 +54,12 @@ public class TestBase {
 			fis = new FileInputStream(src);
 			prop = new Properties();
 			prop.load(fis);
-
+			log.info("---Loding Config.properties...");
 			src = new File(System.getProperty("user.dir") + "\\src\\main\\java\\com\\info\\Locators\\locators.properties");
 			fis = new FileInputStream(src);
 			prop = new Properties();
 			prop.load(fis);
-
+			log.info("---Loding locators.properties...");
 			System.out.println("Load property file....!");
 		} catch (Exception ex) {
 			System.out.println("Exception is" + ex.getMessage());
@@ -65,8 +70,8 @@ public class TestBase {
 	public void setUp() {
 		try {
 			Driver.initialize();
-			// String logpath = "log4j.properties";
-			// PropertyConfigurator.configure(logpath);
+			String logpath = "log4j.properties";
+			PropertyConfigurator.configure(logpath);
 		} catch (Exception ex) {
 			System.out.println("Exception is" + ex.getMessage());
 		}
@@ -130,14 +135,8 @@ public class TestBase {
 
 	public static String getApplicationURL() {
 		String URL = prop.getProperty("URL");
-		System.out.println("URL" + URL);
+		// System.out.println("URL" + URL);
 		return URL;
-	}
-
-	public static String getBrowserName() {
-		String browser = prop.getProperty("browser");
-		// System.out.println("browser name is" + browser);
-		return browser;
 	}
 
 	public WebElement waitForElement(WebDriver driver, long time1, WebElement element) {
@@ -236,7 +235,7 @@ public class TestBase {
 
 	public String[][] getTestData(String excel_Name, String sheetName) {
 		String excel_location = System.getProperty("user.dir") + "\\src\\main\\java\\com\\info\\TestDataFile\\" + excel_Name;
-		System.out.println("DataSheet Location....!" + excel_location);
+		// System.out.println("DataSheet Location....!" + excel_location);
 		reader = new Excel_Reader();
 		return reader.getExcelData(excel_location, sheetName);
 	}

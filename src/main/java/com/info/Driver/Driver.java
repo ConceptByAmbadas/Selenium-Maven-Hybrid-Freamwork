@@ -2,6 +2,7 @@ package com.info.Driver;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -11,13 +12,15 @@ import com.info.TestBase.TestBase;
 
 public class Driver extends TestBase {
 
+	public static final Logger log = Logger.getLogger(Driver.class.getName());
 	public static WebDriver Instance = null;
 
 	public static void initialize() {
 		try {
 			if (Instance == null) {
-				System.out.println("Initializing Driver...");
-				System.out.println("Driver Name is:-" + getDriverName());
+				// System.out.println("Initializing Driver...");
+				log.info("Initializing Driver..");
+
 				if (getDriverName().equalsIgnoreCase("Firefox")) {
 					Instance = new FirefoxDriver();
 				} else if (getDriverName().equalsIgnoreCase("Chrome")) {

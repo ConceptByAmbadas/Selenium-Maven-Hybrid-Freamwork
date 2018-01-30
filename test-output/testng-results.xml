@@ -2,31 +2,31 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="150920" started-at="2018-01-29T17:25:25Z" finished-at="2018-01-29T17:27:56Z">
+  <suite name="Default suite" duration-ms="80428" started-at="2018-01-30T17:20:44Z" finished-at="2018-01-30T17:22:04Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="150920" started-at="2018-01-29T17:25:25Z" finished-at="2018-01-29T17:27:56Z">
+    <test name="Default test" duration-ms="80428" started-at="2018-01-30T17:20:44Z" finished-at="2018-01-30T17:22:04Z">
       <class name="com.info.TestScripts.TC_001">
-        <test-method status="PASS" signature="Reportsetup()[pri:0, instance:com.info.TestScripts.TC_001@bbfa04]" name="Reportsetup" is-config="true" duration-ms="1501" started-at="2018-01-29T22:55:23Z" finished-at="2018-01-29T22:55:25Z">
+        <test-method status="PASS" signature="Reportsetup()[pri:0, instance:com.info.TestScripts.TC_001@322d26]" name="Reportsetup" is-config="true" duration-ms="1091" started-at="2018-01-30T22:50:43Z" finished-at="2018-01-30T22:50:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Reportsetup -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.info.TestScripts.TC_001@bbfa04]" name="setUp" is-config="true" duration-ms="28198" started-at="2018-01-29T22:55:25Z" finished-at="2018-01-29T22:55:53Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.info.TestScripts.TC_001@322d26]" name="setUp" is-config="true" duration-ms="26911" started-at="2018-01-30T22:50:44Z" finished-at="2018-01-30T22:51:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeMethod(org.testng.ITestResult)[pri:0, instance:com.info.TestScripts.TC_001@bbfa04]" name="beforeMethod" is-config="true" duration-ms="18" started-at="2018-01-29T22:56:04Z" finished-at="2018-01-29T22:56:04Z">
+        <test-method status="PASS" signature="beforeMethod(org.testng.ITestResult)[pri:0, instance:com.info.TestScripts.TC_001@322d26]" name="beforeMethod" is-config="true" duration-ms="24" started-at="2018-01-30T22:51:18Z" finished-at="2018-01-30T22:51:18Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Enquiry_form status=SUCCESS method=TC_001.Enquiry_form(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.info.TestScripts.TC_001@bbfa04] output={null}]]]>
+                <![CDATA[[TestResult name=Enquiry_form status=SUCCESS method=TC_001.Enquiry_form(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.info.TestScripts.TC_001@322d26] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Enquiry_form(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.info.TestScripts.TC_001@bbfa04]" name="Enquiry_form" duration-ms="109223" started-at="2018-01-29T22:56:04Z" data-provider="testData" finished-at="2018-01-29T22:57:54Z">
+        <test-method status="PASS" signature="Enquiry_form(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.info.TestScripts.TC_001@322d26]" name="Enquiry_form" duration-ms="38545" started-at="2018-01-30T22:51:18Z" data-provider="testData" finished-at="2018-01-30T22:51:56Z">
           <params>
             <param index="0">
               <value>
@@ -57,18 +57,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Enquiry_form -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.info.TestScripts.TC_001@bbfa04]" name="afterMethod" is-config="true" duration-ms="659" started-at="2018-01-29T22:57:54Z" finished-at="2018-01-29T22:57:54Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.info.TestScripts.TC_001@322d26]" name="afterMethod" is-config="true" duration-ms="6893" started-at="2018-01-30T22:51:56Z" finished-at="2018-01-30T22:52:03Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Enquiry_form status=SUCCESS method=TC_001.Enquiry_form(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.info.TestScripts.TC_001@bbfa04] output={null}]]]>
+                <![CDATA[[TestResult name=Enquiry_form status=SUCCESS method=TC_001.Enquiry_form(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.info.TestScripts.TC_001@322d26] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:com.info.TestScripts.TC_001@bbfa04]" name="endTest" is-config="true" duration-ms="1144" started-at="2018-01-29T22:57:54Z" finished-at="2018-01-29T22:57:56Z">
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.info.TestScripts.TC_001@322d26]" name="endTest" is-config="true" duration-ms="1128" started-at="2018-01-30T22:52:03Z" finished-at="2018-01-30T22:52:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
