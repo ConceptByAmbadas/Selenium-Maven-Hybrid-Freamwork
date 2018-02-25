@@ -66,6 +66,12 @@ public class TestBase {
 		}
 	}
 
+	// Method Name:SetUp
+	// Author:-Ambadas
+	// Purpose:-To get driver initialise befor execution get
+	// start creation Date:-23/10/2017
+	// ===============================================
+
 	@BeforeClass
 	public void setUp() {
 		try {
@@ -76,6 +82,11 @@ public class TestBase {
 			System.out.println("Exception is" + ex.getMessage());
 		}
 	}
+
+	// Method Name:Reportsetup()
+	// Author:-Ambadas
+	// Purpose:-To prepare execution report creation
+	// Date:-27/10/2017
 
 	@BeforeSuite
 	public void Reportsetup() {
@@ -90,6 +101,10 @@ public class TestBase {
 			System.out.println("Issue is" + ex.getMessage());
 		}
 	}
+
+	// Method Name:getResult()
+	// Author:-Ambadas Purpose:-To fetch the execution result creation
+	// Date:-29/10/2017
 
 	public void getResults(ITestResult result) {
 		String screenshotpath = getScreenshot(Driver.Instance);
@@ -139,10 +154,18 @@ public class TestBase {
 		return URL;
 	}
 
+	// Method Name:waitForElement()
+	// Author:-Ambadas Purpose:-waitForElement to present on screen creation
+	// Date:-23/10/2017
+
 	public WebElement waitForElement(WebDriver driver, long time1, WebElement element) {
 		WebDriverWait wait1 = new WebDriverWait(driver, time1);
 		return wait1.until(ExpectedConditions.elementToBeClickable(element));
 	}
+
+	// Method Name:waitForElementwithpollingInterval
+	// Author:-Ambadas Purpose:-Dynamic
+	// wait for element to present on screen creation Date:-23/10/2017
 
 	public WebElement waitForElementwithpollingInterval(WebDriver driver, long time2, WebElement element) {
 		WebDriverWait wait2 = new WebDriverWait(driver, time2);
@@ -155,6 +178,11 @@ public class TestBase {
 		WebDriver driver = null;
 		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
 	}
+
+	// Method Name:getLocators
+	// Author:-Ambadas
+	// Purpose:-getLocator dynamically
+	// creation Date:-23/10/2017
 
 	public WebElement getLocator(String locator) throws Exception {
 		System.out.println("Locator Type:-" + locator);
@@ -181,6 +209,11 @@ public class TestBase {
 			throw new Exception("Unknown Exception Type ' " + locatorType + " ' ");
 
 	}
+
+	// Method Name:getLocators
+	// Author:-Ambadas
+	// Purpose:-get elements
+	// creation Date:-23/10/2017
 
 	public List<WebElement> getLocators(String locator) throws Exception {
 		String[] split = locator.split(":");
@@ -212,20 +245,21 @@ public class TestBase {
 
 	}
 
+	// Method Name:getscreenshot()
+	// Author:-Ambadas
+	// Purpose:-To getscreenshot
+	// creation Date:-03/11/2017
+
 	public String getScreenshot(WebDriver driver) {
 		try {
 			DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HHmmss");
 			Date date = new Date();
-			// System.out.println(dateFormat.format(date)); // 2016/11/16
-			// 12:08:43
 			time = dateFormat.format(date);
-			// System.out.println("Time is" + time);
 			TakesScreenshot tc = (TakesScreenshot) driver;
 			File src = tc.getScreenshotAs(OutputType.FILE);
 			dest = System.getProperty("user.dir") + "\\src\\main\\java\\com\\info\\Screenshot\\" + time + ".png";
 			File destination = new File(dest);
 			FileUtils.copyFile(src, destination);
-			// System.out.println("image destination" + dest);
 			System.out.println("Screen shot taken...!");
 		} catch (Exception ex) {
 			System.out.println("Exception is" + ex.getMessage());
@@ -233,9 +267,14 @@ public class TestBase {
 		return dest;
 	}
 
+	// Method Name:getTestdata()
+	// Author:-Ambadas
+	// Purpose:-This method is design to get data from excel using getExcelData
+	// method creation
+	// Date:-23/10/2017
+
 	public String[][] getTestData(String excel_Name, String sheetName) {
 		String excel_location = System.getProperty("user.dir") + "\\src\\main\\java\\com\\info\\TestDataFile\\" + excel_Name;
-		// System.out.println("DataSheet Location....!" + excel_location);
 		reader = new Excel_Reader();
 		return reader.getExcelData(excel_location, sheetName);
 	}
